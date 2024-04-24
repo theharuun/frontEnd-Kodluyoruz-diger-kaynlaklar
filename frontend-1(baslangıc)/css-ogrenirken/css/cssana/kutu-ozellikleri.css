@@ -1,0 +1,58 @@
+/* padding : içerde hareket etmesini sağlar */
+/* margin containerlerın boxların arasındaki mesafeyi belirler  margin-top ersek üstten margin alır */
+/* float yanyana gelmesini sağlar kutuların */
+
+.box{
+   
+    width: 300px;
+    height: 300px;
+    padding: 10px;
+    /* margin: 10px; */
+    /* margin-top: 10px; */
+    /* margin-bottom: 10px; */
+    margin-right: 10px;
+    float: left;
+    
+}
+.container{
+    width: 1000px;
+    /* margin-left: auto; */
+    /* margin: 0 auto;    yukarı/aşşağı   sola/sağa */
+    /* margin-right: auto; */
+    /* margin: 0 auto 0 auto;      yukarı sağ aşşağı sol     */
+    margin: 50px auto 0;
+}
+
+.card{
+width: 15%;
+float: left;
+padding: 5%;
+margin: 3%;
+border-radius: 10px;
+background-color: rgb(127, 130, 132);
+}
+
+
+.left-bar{
+    float: left;
+    width: 200000px;
+    padding: 5%;
+}
+.content{
+    float: left;
+    width: 800px;
+}
+
+.clear{
+    clear: both;
+}
+
+.bg-red{
+    background-color: red;
+}
+.bg-yellow{
+    background-color: yellow;
+}
+.bg-green{
+    background-color: green;
+}

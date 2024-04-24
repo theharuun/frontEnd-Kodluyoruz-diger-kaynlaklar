@@ -1,0 +1,33 @@
+/* .class             #id    */
+/* https://www.w3schools.com/cssref/css_selectors.php selector kısmı */
+.font-size{
+    font-size: 50px;
+}
+#background-color{
+    background-color: aqua;
+}
+
+li:last-child{
+    color: cadetblue;
+}
+li:first-child{
+    color: firebrick;
+}
+
+p {
+font-size: larger;
+color: red;
+border: beige;
+}
+
+
+body {
+    text-align: center;
+    list-style-position: inside;
+    font-family: "Madimi One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  
+  
+}
+
