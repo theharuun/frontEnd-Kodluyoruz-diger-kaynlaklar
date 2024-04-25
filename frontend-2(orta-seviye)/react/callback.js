@@ -3,6 +3,7 @@
 //await ise hangi işlemin bitmesini beklemek istiyorsak onu belirtmek için.
 
 
+
 // setTimeout(()=>{
 //     console.log("merhaba")},5000);
 // ikinci kısım mili salinye cinsindendir 1000= 1 saniye
@@ -32,7 +33,7 @@ fetch("https://jsonplaceholder.typicode.com/posts/2")
 .then((data)=>console.log("post2 yuklendi",data))
 */
 
-// iki seçenek var 
+// 3 seçenek var 
 //A-) iç içe yazaarak lakin böyle calisması zordur bu dersimizn amacı async ve await idir 
 // fetch("https://jsonplaceholder.typicode.com/users")
 // .then((users)=>users.json())
@@ -75,25 +76,47 @@ fetch("https://jsonplaceholder.typicode.com/posts/2")
 // getData();
 
 // anonim func (await()=>{})(); ile birlikte fonk oluşturup calistiradabilriz
- (async ()=>
- {
-    const users=await (
-        (await fetch("https://jsonplaceholder.typicode.com/users")
-        ).json());
+//  (async ()=>
+//  {
+//     const users=await (
+//         (await fetch("https://jsonplaceholder.typicode.com/users")
+//         ).json());
      
     
-        const post1= await (
-            (await fetch("https://jsonplaceholder.typicode.com/posts/1")
-        ).json());
+//         const post1= await (
+//             (await fetch("https://jsonplaceholder.typicode.com/posts/1")
+//         ).json());
     
-        const post2= await (
-            (await fetch("https://jsonplaceholder.typicode.com/posts/2")
-        ).json());
+//         const post2= await (
+//             (await fetch("https://jsonplaceholder.typicode.com/posts/2")
+//         ).json());
+//         console.log("users yuklendi",users);
+//         console.log("post1 yuklendi",post1);
+//         console.log("post2 yuklendi",post2);
+//  }
+// )();
+
+// 3 seçenek fetch yerine axios kullanımı bu sayde json kullanmayız
+//C-)
+// const { default: axios } = require("axios");
+//üsteki gibi yada aşşağıdaki gibi dosyaya dahil etmemiz gerekiyor kütüphaneyi
+import axios from "axios";
+
+// data diğe obj döner bunları yeniden isimlendirme yapıyoruz böylece karmaşadan kurtuluyoruz
+(async ()=>
+ {
+        const {data:users}=await axios("https://jsonplaceholder.typicode.com/users");
+      
+        const {data:post1}= await axios("https://jsonplaceholder.typicode.com/posts/1");
+
+        const {data:post2}= await axios("https://jsonplaceholder.typicode.com/posts/2");
+       
         console.log("users yuklendi",users);
         console.log("post1 yuklendi",post1);
         console.log("post2 yuklendi",post2);
  }
 )();
+
     
 
 
