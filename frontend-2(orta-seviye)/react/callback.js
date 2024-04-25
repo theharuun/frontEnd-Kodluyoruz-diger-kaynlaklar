@@ -102,21 +102,103 @@ fetch("https://jsonplaceholder.typicode.com/posts/2")
 //üsteki gibi yada aşşağıdaki gibi dosyaya dahil etmemiz gerekiyor kütüphaneyi
 import axios from "axios";
 
-// data diğe obj döner bunları yeniden isimlendirme yapıyoruz böylece karmaşadan kurtuluyoruz
-(async ()=>
- {
-        const {data:users}=await axios("https://jsonplaceholder.typicode.com/users");
+// data diye obj döner bunları yeniden isimlendirme yapıyoruz böylece karmaşadan kurtuluyoruz
+// (async ()=>
+//  {
+//         const {data:users}=await axios("https://jsonplaceholder.typicode.com/users");
       
-        const {data:post1}= await axios("https://jsonplaceholder.typicode.com/posts/1");
+//         const {data:post1}= await axios("https://jsonplaceholder.typicode.com/posts/1");
 
-        const {data:post2}= await axios("https://jsonplaceholder.typicode.com/posts/2");
+//         const {data:post2}= await axios("https://jsonplaceholder.typicode.com/posts/2");
        
-        console.log("users yuklendi",users);
-        console.log("post1 yuklendi",post1);
-        console.log("post2 yuklendi",post2);
- }
-)();
+//         console.log("users yuklendi",users);
+//         console.log("post1 yuklendi",post1);
+//         console.log("post2 yuklendi",post2);
+//  }
+// )();
 
-    
+//PROMİSE calisma sistemi 
+// return ile return new Promise
+// resolve ve reject içine her şey gönderebilriz test obj number ...
+const getComments=(number)=>{
+       return new Promise( (resolve, reject) => {
+        //1.örnek
+              console.log("comments")
+              if(number===1)
+              resolve({test:"lorem ipsum"});       
+     
+              reject("hata aldiniz!!!");
+     
+       })
+};
+
+const getUsers=(number)=>{
+       return new Promise(async (resolve, reject) => {
+        //2.örnek
+        const {data}=await axios("https://jsonplaceholder.typicode.com/users");      
+          if(number===1)
+            resolve(data,`kullanicilar yuklendi`);
+       })
+};
+
+const getPosts=(post_ID)=>{
+       return new Promise(async (resolve, reject) => {
+        //2.örnek
+        const {data}= await axios("https://jsonplaceholder.typicode.com/posts/"+post_ID);      
+         
+            resolve(data,`post ${post_ID} yuklendi`);
+       })
+};
+
+
+
+// asyncron olarak çalışır yani birbirinden bağımsızdırlar sırayla çalışmazlar bildiğimiz compiler gibi değildir
+// getComments(1)
+// .then((data)=>console.log(data))
+// .catch((e)=> console.log(e));
+
+// getUsers(1)
+// .then((data)=>console.log(data))
+// .catch((e)=> console.log(e));
+
+// getPosts(2)
+// .then((data)=>console.log(data))
+// .catch((e)=> console.log(e));
+
+(async ()=>{
+//        getComments(1)
+// .then((data)=>console.log(data))
+// .catch((e)=> console.log(e));
+
+// getUsers(1)
+// .then((data)=>console.log(data))
+// .catch((e)=> console.log(e));
+
+// getPosts(2)
+// .then((data)=>console.log(data))
+// .catch((e)=> console.log(e));
+
+// then ve catchsiz getirme 
+
+
+
+try {
+const comment = await getComments(2);
+const users= await getUsers(1);
+const posts=await getPosts(2);
+
+console.log(comment);
+console.log(users);
+console.log(posts);
+       
+} catch (error) {
+       // catch bu şekilde yakalarız getCommnets(2) ile reject satırı calisti 
+       console.log(error);
+       
+}
+
+})();
+
+
 
 
