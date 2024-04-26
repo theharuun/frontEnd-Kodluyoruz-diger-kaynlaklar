@@ -2,40 +2,43 @@ import axios from "axios"
 
 
 //isimli fonksiyon
-// const getUsers=(user_ID,posts)=>{
+const getUsers=async (number)=>{
 
-//    return new Promise( async (resolve, reject) => {
-//     const {data:user}=await axios("https://jsonplaceholder.typicode.com/users/"+user_ID);
-//     const{data:post} = await axios("https://jsonplaceholder.typicode.com/posts/"+posts);
+   
+    const {data:user}=await axios(`https://jsonplaceholder.typicode.com/users/${number}`);
+    const{data:post} = await axios(`https://jsonplaceholder.typicode.com/posts?userId=${number}`);
+   
+    console.log("user",user);
+    console.log("post ",post[0]);
+   
     
+}
 
-//     if(user_ID && posts)
-//     {
-//     console.log("user yuklendi",user);
-//     console.log("post ",post);
-//     }
-//     else
-//     {
-//         reject("bir hata olustu");
-//     }
-//    })
-// }
-// getUsers(1,1)
-// .then((data)=>console.log(data))
-// .catch((e)=>console.log(e));
+export default getUsers;
 
+/**
+ * import axios from 'axios';
 
+async function getData(number) {
+    const {data: user} = await axios(`https://jsonplaceholder.typicode.com/users/${number}`);
+    const {data: post} = await axios(`https://jsonplaceholder.typicode.com/posts?userId=${number}`);
 
+    console.log('users', user);
+    console.log('posts', post);
+};
+
+export default getData;
+ */
 //anonim fonksiyon
 
-(async (Id,postId)=>{
-    const {data:id}=await axios("https://jsonplaceholder.typicode.com/users/"+Id);
-    const {data:post}=await axios("https://jsonplaceholder.typicode.com/posts/"+postId);
+// (async (Id,postId)=>{
+//     const {data:id}=await axios("https://jsonplaceholder.typicode.com/users/"+Id);
+//     const {data:post}=await axios("https://jsonplaceholder.typicode.com/posts/"+postId);
 
-    if(Id,postId)
-    {
-        console.log("user yuklendi",id);
-        console.log("post yuklendi",post);
-    }
+//     if(Id,postId)
+//     {
+//         console.log("user yuklendi",id);
+//         console.log("post yuklendi",post);
+//     }
     
-})(5,2);
+// })(5,2);
