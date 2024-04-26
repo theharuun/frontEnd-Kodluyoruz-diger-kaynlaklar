@@ -77,7 +77,7 @@ fetch("https://jsonplaceholder.typicode.com/posts/2")
 
 // anonim func (await()=>{})(); ile birlikte fonk oluşturup calistiradabilriz
 //  (async ()=>
-//  {
+//  {      // await iki kez kullanıyoruz cünkü jsonda old için 
 //     const users=await (
 //         (await fetch("https://jsonplaceholder.typicode.com/users")
 //         ).json());
