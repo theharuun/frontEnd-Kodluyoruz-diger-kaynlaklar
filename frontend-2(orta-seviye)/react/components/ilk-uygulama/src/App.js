@@ -4,18 +4,25 @@ import Header from './comp/header';
 
 const name="harun";
 const surname="korkmaz";
+const isLoggedIn=false;
 function App() {
 return (
-  <>
-  {name} {surname}
-   <h1>{`benim adim ${name} , soyadim ${surname}`}</h1>
+<>
+<h1>{isLoggedIn && `benim adim ${name} , soyadim ${surname}`} 
+    {!isLoggedIn && `Isminizi girmediniz`}
+</h1>
 
-  </>
+</>
+
 );
 }
 
 export default App;
+  // <>  değişkenleri render etme şeklimiz
+  // {name} {surname} birincisi
+  //  <h1>{`benim adim ${name} , soyadim ${surname}`}</h1> ikincisi
 
+  // </>
 {/* <Header />
 class yerine className karışmaması için for yerine htmlFor gibi
 <p className="abc">
