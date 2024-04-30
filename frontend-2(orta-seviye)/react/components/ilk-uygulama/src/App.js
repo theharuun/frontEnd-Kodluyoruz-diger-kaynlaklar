@@ -5,10 +5,16 @@ import Header from './comp/header';
 const name="harun";
 const surname="korkmaz";
 const isLoggedIn=false;
+const isLoggedIn2=true;
 function App() {
 return (
 <>
-<h1>{isLoggedIn && `benim adim ${name} , soyadim ${surname}`} 
+<h1>
+
+    {isLoggedIn2? `benim adim ${name} , soyadim ${surname}`:`Isminizi girmediniz `}
+    </h1>
+    <h1>
+    {isLoggedIn && `benim adim ${name} , soyadim ${surname}`} 
     {!isLoggedIn && `Isminizi girmediniz`}
 </h1>
 
