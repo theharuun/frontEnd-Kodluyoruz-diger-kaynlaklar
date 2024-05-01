@@ -1,28 +1,43 @@
 import logo from './logo.svg';
 import './App.css';
 import Header from './comp/header';
+import User from './comp/User';
 
-const name="harun";
-const surname="korkmaz";
-const isLoggedIn=false;
-const isLoggedIn2=true;
+// const Friends=[
+//   { name:"ahmet",
+//     id:1},
+//   { name:"selim",
+//     id:2},
+//   { name:"gulbahar",
+//     id:3},
+//   { name:"omerinzi",
+//     id:4}]
+
 function App() {
 return (
-<>
-<h1>
+      <>
+        <User 
+          name="Harun" 
+          surName="Korkmaz" 
+          isLoggedIn={true} 
+          age={21} 
+          friends={["abc","bcd","cde","def","efg"]}
+        />
+    </>
+);
+}
+// const name="harun";
+// const surname="korkmaz";
+// const isLoggedIn=false;
+// const isLoggedIn2=true;
+{/* <h1>
 
     {isLoggedIn2? `benim adim ${name} , soyadim ${surname}`:`Isminizi girmediniz `}
     </h1>
     <h1>
     {isLoggedIn && `benim adim ${name} , soyadim ${surname}`} 
     {!isLoggedIn && `Isminizi girmediniz`}
-</h1>
-
-</>
-
-);
-}
-
+</h1> */}
 export default App;
   // <>  değişkenleri render etme şeklimiz
   // {name} {surname} birincisi
