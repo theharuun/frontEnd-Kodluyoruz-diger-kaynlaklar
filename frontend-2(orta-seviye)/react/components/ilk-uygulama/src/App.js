@@ -3,25 +3,32 @@ import './App.css';
 import Header from './comp/header';
 import User from './comp/User';
 
-// const Friends=[
-//   { name:"ahmet",
-//     id:1},
-//   { name:"selim",
-//     id:2},
-//   { name:"gulbahar",
-//     id:3},
-//   { name:"omerinzi",
-//     id:4}]
+const Friends=[
+  { name:"ahmet",
+    id:1},
+  { name:"selim",
+    id:2},
+  { name:"gulbahar",
+    id:3},
+  { name:"omerinzi",
+    id:4}]
 
 function App() {
 return (
       <>
         <User 
-          name="Harun" 
+          name="Harun"
           surName="Korkmaz" 
           isLoggedIn={true} 
           age={21} 
           friends={["abc","bcd","cde","def","efg"]}
+          friends2={Friends}
+          address={
+            {
+                 title:"Cekmekoy/Istanbul",
+                 zip:34777
+          }
+        }
         />
     </>
 );
