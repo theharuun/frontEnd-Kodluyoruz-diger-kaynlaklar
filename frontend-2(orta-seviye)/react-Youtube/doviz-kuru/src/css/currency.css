@@ -40,8 +40,9 @@
 }
 h3{
     border-style: outset;
-    margin-bottom: 37px;
-    background-color: aliceblue;
+    margin-bottom: 37px;   
+     background-color: black;
+    color: azure;
     height: 36px;
     padding: 10px;
     padding-top: 20px;
