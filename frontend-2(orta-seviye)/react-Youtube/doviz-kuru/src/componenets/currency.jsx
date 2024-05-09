@@ -6,7 +6,7 @@ import axios from 'axios';
 
 // api aldigim site" https://app.freecurrencyapi.com/dashboard"
 let BASE_URL="https://api.freecurrencyapi.com/v1/latest";  // base url budur bunsuz ulasamam
-let API_KEY="fca_live_akdPQa0eRhiqWo0FX3AiKqAvQgGY7i1PHAqpez6F" // bu url api budur bana özel olan bu 
+let API_KEY="fca_live_akdPQa0eRhiqWo0FX3AiKqAvQgGY7i1PHAqpez6F" // bu url api budur bana ozel olan bu 
 
 
 function Currency() {
@@ -19,14 +19,14 @@ function Currency() {
 
 
     const exChange=async()=>{
-    // async olarak çalışmalı çünkü önce apiden dövizimizin karşılık geldiği degerleri cekip sonra bunları ilgili yerlerde göstermemiz gerekiyor
+    // async olarak calismali çünkü önce apiden dövizimizin karsilik geldiği degerleri cekip sonra bunlari ilgili yerlerde göstermemiz gerekiyor
     
 
     // axios ile api getirdik basecurrencyi fromdan yani girilen cinsten cektik 
         const response=await axios.get(`${BASE_URL}?apikey=${API_KEY}&base_currency=${fromCurrency}`);
         // cekilen verilerden cevirmek istediğimiz cinsi array yapisinda secip onu girdigimiz amount ile carpip fixledik sonra bunu res degiskenine atadik
-        const res= (response.data.data[toCurrency]*amount).toFixed(2);  // .dan sonra 2 basamak olucak şekilde yuvarlama yapılıyor
-        // atadigimiz res degiskenindeki degeri result set ederek  uyulamamızı bitirdik
+        const res= (response.data.data[toCurrency]*amount).toFixed(2);  // .dan sonra 2 basamak olucak sekilde yuvarlama yapiliyor
+        // atadigimiz res degiskenindeki degeri result set ederek  uygulamamizi bitirdik
         setResult(res);
       
       
