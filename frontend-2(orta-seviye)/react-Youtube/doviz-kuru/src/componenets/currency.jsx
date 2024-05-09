@@ -4,27 +4,29 @@ import { FaLongArrowAltRight } from "react-icons/fa";
 import axios from 'axios';
 
 
-
-let BASE_URL="https://api.freecurrencyapi.com/v1/latest";
-let API_KEY="fca_live_akdPQa0eRhiqWo0FX3AiKqAvQgGY7i1PHAqpez6F"
+// api aldigim site" https://app.freecurrencyapi.com/dashboard"
+let BASE_URL="https://api.freecurrencyapi.com/v1/latest";  // base url budur bunsuz ulasamam
+let API_KEY="fca_live_akdPQa0eRhiqWo0FX3AiKqAvQgGY7i1PHAqpez6F" // bu url api budur bana özel olan bu 
 
 
 function Currency() {
    
-    const [amount,setAmount]=useState();
-    const [fromCurrency,setFromCurrency]=useState('USD');
-    const [toCurrency,setToCurrency]=useState('TRY');
-    const [result,setResult]=useState(0);
+    const [amount,setAmount]=useState(); // girilen değeri tutan state
+    const [fromCurrency,setFromCurrency]=useState('USD'); // girilenin cinsini tutan state
+    const [toCurrency,setToCurrency]=useState('TRY');  // sonucun cinsini tutan state
+    const [result,setResult]=useState(0); // sonucun degerini tutan state
     
-// let EXCHANGE_API=cd 
+
 
     const exChange=async()=>{
-        // console.log(amount);
-        // console.log(fromCurrency);
-        // console.log(toCurrency);
+    // async olarak çalışmalı çünkü önce apiden dövizimizin karşılık geldiği degerleri cekip sonra bunları ilgili yerlerde göstermemiz gerekiyor
+    
 
+    // axios ile api getirdik basecurrencyi fromdan yani girilen cinsten cektik 
         const response=await axios.get(`${BASE_URL}?apikey=${API_KEY}&base_currency=${fromCurrency}`);
+        // cekilen verilerden cevirmek istediğimiz cinsi array yapisinda secip onu girdigimiz amount ile carpip fixledik sonra bunu res degiskenine atadik
         const res= (response.data.data[toCurrency]*amount).toFixed(2);  // .dan sonra 2 basamak olucak şekilde yuvarlama yapılıyor
+        // atadigimiz res degiskenindeki degeri result set ederek  uyulamamızı bitirdik
         setResult(res);
       
       
@@ -34,6 +36,12 @@ function Currency() {
     }
 
 
+    /*
+    ilk inputu =amount 
+    ilk selecti =from 
+    ikinci selecti =to
+    ikinci inputu=result
+    */
 
   return (
     <div className='currency-div'>
