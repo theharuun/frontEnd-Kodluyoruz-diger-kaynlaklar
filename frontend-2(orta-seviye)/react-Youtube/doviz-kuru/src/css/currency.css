@@ -1,0 +1,48 @@
+.currency-div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+    border-color: black;
+    border-style: solid;
+    height: 235px;
+}
+
+.amount{
+    width: 80px;
+    height: 25px;
+    margin-right: 10px;
+}
+.result{
+    width: 80px;
+    height: 25px;
+    margin-left: 10px;
+}
+.btn-donustur{
+    margin-inline: 40px;
+    font-family: fantasy;
+    font-size: larger;
+    width: 107px;
+    border-radius: inherit;
+    border-bottom-right-radius: 10px;
+    border-top-left-radius: 10px;
+    background-color: darkseagreen;
+    cursor: pointer;
+}
+.from-currency-option{
+    width: 50px;
+    height: 30px;
+}
+.to-currency-option{
+    width: 50px;
+    height: 30px;
+}
+h3{
+    border-style: outset;
+    margin-bottom: 37px;
+    background-color: aliceblue;
+    height: 36px;
+    padding: 10px;
+    padding-top: 20px;
+}
