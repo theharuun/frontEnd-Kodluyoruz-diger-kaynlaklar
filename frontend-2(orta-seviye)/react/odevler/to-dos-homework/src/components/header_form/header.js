@@ -13,13 +13,18 @@ function Header({addTodo,todos}) {
       setForm({...form,[e.target.name]:e.target.value});
   }
 
+
+
+
+  const clearInput=()=>{
+    setForm('');
+
+}
   const onSubmit=(e)=>{
     e.preventDefault();
-
     if(form.text===""){return false;}
-
     addTodo([...todos,form]);
-
+   
     console.log(form);
 }
   return (
@@ -31,7 +36,7 @@ function Header({addTodo,todos}) {
             name="text"
             class="new-todo" 
             placeholder="What needs to be done?" 
-           
+             
             onKeyUp={changeInput}
              autoFocus />
             

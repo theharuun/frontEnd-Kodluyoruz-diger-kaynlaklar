@@ -26,7 +26,7 @@ function Uygulama() {
   return (
     <div>
 
-  <Header addTodo={setTodo} todos={todos} />
+  <Header addTodo={setTodo} todos={todos}  />
 	<List   todos={todos} />
 	<Footer todos={todos}  />
     </div>
